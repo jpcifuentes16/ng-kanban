@@ -50,6 +50,7 @@ export class ViewTaskModalComponent implements OnInit {
   }
 
   updateStatus(event: Event) {
+    console.log("UpdateStatus Sin Drag n Drop");
     const columnName = (event.target as HTMLSelectElement).value;
 
     this.data.task = {

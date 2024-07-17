@@ -45,10 +45,14 @@ export class BoardDataService {
 
     if (userBoards) {
       this.boards.set(userBoards);
+      this.sortAllTasksAlphabetically(); // Ordenar tareas al cargar desde localStorage
     } else {
       this.boardHttp
         .getBoards()
-        .subscribe((res) => this.boards.set(res.boards));
+        .subscribe((res) => {
+          this.boards.set(res.boards);
+          this.sortAllTasksAlphabetically(); // Ordenar tareas al cargar desde el servidor
+        });
     }
   }
 
@@ -169,6 +173,18 @@ export class BoardDataService {
             }
           : board,
       ),
+    );
+  }
+
+  private sortAllTasksAlphabetically(): void {
+    this.boards.update((boards) =>
+      boards.map((board) => ({
+        ...board,
+        columns: board.columns.map((column) => ({
+          ...column,
+          tasks: column.tasks.sort((a, b) => a.title.localeCompare(b.title)),
+        })),
+      })),
     );
   }
 }

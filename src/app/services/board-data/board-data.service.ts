@@ -47,12 +47,10 @@ export class BoardDataService {
       this.boards.set(userBoards);
       this.sortAllTasksAlphabetically(); // Ordenar tareas al cargar desde localStorage
     } else {
-      this.boardHttp
-        .getBoards()
-        .subscribe((res) => {
-          this.boards.set(res.boards);
-          this.sortAllTasksAlphabetically(); // Ordenar tareas al cargar desde el servidor
-        });
+      this.boardHttp.getBoards().subscribe((res) => {
+        this.boards.set(res.boards);
+        this.sortAllTasksAlphabetically(); // Ordenar tareas al cargar desde el servidor
+      });
     }
   }
 
@@ -108,7 +106,7 @@ export class BoardDataService {
       ?.columns.map((column) => ({
         ...column,
         tasks: column.tasks.filter(
-          (task) => task.title === updateTask.task.title,
+          (task) => task.titulo === updateTask.task.titulo,
         ),
       }))
       .filter((column) => column.tasks.length > 0)
@@ -124,7 +122,7 @@ export class BoardDataService {
               columns: board.columns.map((column) => ({
                 ...column,
                 tasks: column.tasks.map((task) =>
-                  task.title === updateTask.task.title
+                  task.titulo === updateTask.task.titulo
                     ? { ...updateTask.task }
                     : task,
                 ),
@@ -144,7 +142,7 @@ export class BoardDataService {
                   return {
                     ...column,
                     tasks: column.tasks.filter(
-                      (task) => task.title !== updateTask.task.title,
+                      (task) => task.titulo !== updateTask.task.titulo,
                     ),
                   };
                 } else {
@@ -177,14 +175,14 @@ export class BoardDataService {
   }
 
   private sortAllTasksAlphabetically(): void {
-    this.boards.update((boards) =>
-      boards.map((board) => ({
-        ...board,
-        columns: board.columns.map((column) => ({
-          ...column,
-          tasks: column.tasks.sort((a, b) => a.title.localeCompare(b.title)),
-        })),
-      })),
-    );
+    // this.boards.update((boards) =>
+    //   boards.map((board) => ({
+    //     ...board,
+    //     columns: board.columns.map((column) => ({
+    //       ...column,
+    //       tasks: column.tasks.sort((a, b) => a.title.localeCompare(b.title)),
+    //     })),
+    //   })),
+    // );
   }
 }

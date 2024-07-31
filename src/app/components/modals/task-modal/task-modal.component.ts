@@ -44,10 +44,10 @@ export class TaskModalComponent implements OnInit {
 
   buildForm() {
     this.form = this.fb.nonNullable.group({
-      title: this.fb.control(this.data.task?.title || '', {
+      title: this.fb.control(this.data.task?.titulo || '', {
         validators: [Validators.required],
       }),
-      description: this.fb.control(this.data.task?.description || ''),
+      description: this.fb.control(this.data.task?.descripcion || ''),
       status: this.fb.control(
         this.data.task?.status || this.data.columns[0].name,
         {
@@ -65,11 +65,6 @@ export class TaskModalComponent implements OnInit {
         }),
       ]),
     });
-
-    if (this.data.task?.subtasks.length > 0) {
-      this.subTaskArray.clear();
-      this.data.task.subtasks.forEach((subtask) => this.addSubtask(subtask));
-    }
   }
 
   get subTaskArray() {

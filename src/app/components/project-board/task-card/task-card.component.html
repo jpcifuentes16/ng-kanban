@@ -1,13 +1,10 @@
 <div
-  class="relative cursor-pointer rounded-xl bg-white px-1.6 py-[2.3rem] text-black shadow-md hover:text-purple dark:bg-grey-dark dark:text-white hover:dark:text-purple"
+  class="relative cursor-pointer rounded-xl bg-white px-6 py-3 text-black shadow-md hover:shadow-lg hover:text-primary transition-all"
   tabindex="0"
 >
-  <ng-content></ng-content>
-  <h2 class="mb-3 w-96 text-md font-bold leading-md">
-    {{ task.title }}
-  </h2>
-  <p class="text-sm font-bold leading-sm text-grey-medium">
-    {{ calculateCompleted(task.subtasks) }} of
-    {{ task.subtasks.length }} subtask{{ task.subtasks.length > 1 ? "s" : "" }}
+  <app-tag [prioridad]=" actividad.prioridad "></app-tag>
+  <p class="mb-3 text-md font-bold leading-md">
+    {{ actividad.titulo }}
   </p>
+  <p class="text-sm leading-md text-grey-medium">Ut aliqua minim excepteur nostrud adipisicing consectetur magna esse.</p>
 </div>

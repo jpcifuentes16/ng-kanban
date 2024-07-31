@@ -85,7 +85,9 @@ export class AppComponent implements OnInit {
   editBoard(): void {
     const dialogRef = this.dialog.open(BoardModalComponent, {
       data: {
-        board: this.activeBoard() ? this.activeBoard() : { name: '', columns: [] },
+        board: this.activeBoard()
+          ? this.activeBoard()
+          : { name: '', columns: [] },
         darkMode: this.darkMode,
       },
     });
@@ -165,7 +167,7 @@ export class AppComponent implements OnInit {
   deleteTask(deleteTask: Task): void {
     const dialogRef = this.dialog.open(DeleteModalComponent, {
       data: {
-        name: deleteTask.title,
+        name: deleteTask.titulo,
         isBoard: false,
         darkMode: this.darkMode,
       },

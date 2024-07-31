@@ -1,5 +1,5 @@
 <div
-  class="board-container board mt-24 h-screen overflow-auto whitespace-nowrap bg-grey-light px-1.6 py-2.4 dark:bg-grey-vdark sm:mt-32 sm:px-2.4 lg:mt-36"
+  class="board-container board mt-24 h-screen overflow-auto whitespace-nowrap bg-grey-light px-1.6 py-2.4 sm:mt-32 sm:px-2.4 lg:mt-36"
 >
   <ng-container *ngIf="activeBoard?.columns?.length; else emptyProjectBoard">
     <div class="inline-block" cdkDropListGroup>
@@ -33,7 +33,7 @@
                 [cdkDragData]="task"
                 (click)="viewTask(task)"
                 (keyup.enter)="viewTask(task)"
-                [task]="task"
+                [actividad]="task"
                 *ngFor="let task of column.tasks"
                 cdkDragHandle
               >

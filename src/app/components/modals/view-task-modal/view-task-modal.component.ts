@@ -31,7 +31,7 @@ export class ViewTaskModalComponent implements OnInit {
           ({
             ...column,
             tasks: column.tasks.filter(
-              (task) => task.title === this.data.task.title,
+              (task) => task.titulo === this.data.task.titulo,
             ),
           }) as Column,
       )
@@ -50,7 +50,7 @@ export class ViewTaskModalComponent implements OnInit {
   }
 
   updateStatus(event: Event) {
-    console.log("UpdateStatus Sin Drag n Drop");
+    console.log('UpdateStatus Sin Drag n Drop');
     const columnName = (event.target as HTMLSelectElement).value;
 
     this.data.task = {

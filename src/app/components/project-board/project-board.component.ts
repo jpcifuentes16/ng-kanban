@@ -44,7 +44,7 @@ export class ProjectBoardComponent {
   drop(event: CdkDragDrop<Task[]>) {
     if (this.activeBoard) {
       if (event.previousContainer === event.container) {
-        console.log("Drag n drop - Orden");
+        console.log('Drag n drop - Orden');
         moveItemInArray(
           event.container.data,
           event.previousIndex,
@@ -54,7 +54,7 @@ export class ProjectBoardComponent {
         this.sortTasksAlphabetically(event.container.data);
         this.boardEdit.emit(this.activeBoard);
       } else {
-        console.log("Drag n drop - Columna");
+        console.log('Drag n drop - Columna');
         transferArrayItem(
           event.previousContainer.data,
           event.container.data,
@@ -67,13 +67,12 @@ export class ProjectBoardComponent {
     }
   }
 
-
   /**
    * Ejemplo de función para ordenar o filtrar tasks
-   * @param tasks 
+   * @param tasks
    */
   sortTasksAlphabetically(tasks: Task[]): void {
-    tasks.sort((a, b) => a.title.localeCompare(b.title));
+    // tasks.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   addColumn(): void {

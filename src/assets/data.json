@@ -7,9 +7,10 @@
           "name": "Todo",
           "tasks": [
             {
-              "title": "Build UI for onboarding flow",
+              "titulo": "Build UI for onboarding flow",
               "description": "",
               "status": "Todo",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Sign up page",
@@ -26,9 +27,10 @@
               ]
             },
             {
-              "title": "Build UI for search",
+              "titulo": "Build UI for search",
               "description": "",
               "status": "Todo",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Search page",
@@ -37,9 +39,10 @@
               ]
             },
             {
-              "title": "Build settings UI",
+              "titulo": "Build settings UI",
               "description": "",
               "status": "Todo",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Account page",
@@ -52,9 +55,10 @@
               ]
             },
             {
-              "title": "QA and test all major user journeys",
+              "titulo": "QA and test all major user journeys",
               "description": "Once we feel version one is ready, we need to rigorously test it both internally and externally to identify any major gaps.",
               "status": "Todo",
+              "prioridad": "Baja",
               "subtasks": [
                 {
                   "title": "Internal testing",
@@ -72,9 +76,10 @@
           "name": "Doing",
           "tasks": [
             {
-              "title": "Design settings and search pages",
+              "titulo": "Design settings and search pages",
               "description": "",
               "status": "Doing",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Settings - Account page",
@@ -91,9 +96,10 @@
               ]
             },
             {
-              "title": "Add account management endpoints",
+              "titulo": "Add account management endpoints",
               "description": "",
               "status": "Doing",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Upgrade plan",
@@ -110,9 +116,10 @@
               ]
             },
             {
-              "title": "Design onboarding flow",
+              "titulo": "Design onboarding flow",
               "description": "",
               "status": "Doing",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Sign up page",
@@ -129,9 +136,10 @@
               ]
             },
             {
-              "title": "Add search enpoints",
+              "titulo": "Add search enpoints",
               "description": "",
               "status": "Doing",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Add search endpoint",
@@ -144,9 +152,10 @@
               ]
             },
             {
-              "title": "Add authentication endpoints",
+              "titulo": "Add authentication endpoints",
               "description": "",
               "status": "Doing",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Define user model",
@@ -159,9 +168,10 @@
               ]
             },
             {
-              "title": "Research pricing points of various competitors and trial different business models",
+              "titulo": "Research pricing points of various competitors and trial different business models",
               "description": "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
               "status": "Doing",
+              "prioridad": "Baja",
               "subtasks": [
                 {
                   "title": "Research competitor pricing and business models",
@@ -183,9 +193,10 @@
           "name": "Done",
           "tasks": [
             {
-              "title": "Conduct 5 wireframe tests",
+              "titulo": "Conduct 5 wireframe tests",
               "description": "Ensure the layout continues to make sense and we have strong buy-in from potential users.",
               "status": "Done",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Complete 5 wireframe prototype tests",
@@ -194,9 +205,10 @@
               ]
             },
             {
-              "title": "Create wireframe prototype",
+              "titulo": "Create wireframe prototype",
               "description": "Create a greyscale clickable wireframe prototype to test our asssumptions so far.",
               "status": "Done",
+              "prioridad": "Alta",
               "subtasks": [
                 {
                   "title": "Create clickable wireframe prototype in Balsamiq",
@@ -205,9 +217,10 @@
               ]
             },
             {
-              "title": "Review results of usability tests and iterate",
+              "titulo": "Review results of usability tests and iterate",
               "description": "Keep iterating through the subtasks until we're clear on the core concepts for the app.",
               "status": "Done",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Meet to review notes from previous tests and plan changes",
@@ -224,9 +237,10 @@
               ]
             },
             {
-              "title": "Create paper prototypes and conduct 10 usability tests with potential customers",
+              "titulo": "Create paper prototypes and conduct 10 usability tests with potential customers",
               "description": "",
               "status": "Done",
+              "prioridad": "Media",
               "subtasks": [
                 {
                   "title": "Create paper prototypes for version one",
@@ -239,9 +253,10 @@
               ]
             },
             {
-              "title": "Market discovery",
+              "titulo": "Market discovery",
               "description": "We need to define and refine our core product. Interviews will help us learn common pain points and help us define the strongest MVP.",
               "status": "Done",
+              "prioridad": "Baja",
               "subtasks": [
                 {
                   "title": "Interview 10 prospective customers",
@@ -250,9 +265,10 @@
               ]
             },
             {
-              "title": "Competitor analysis",
+              "titulo": "Competitor analysis",
               "description": "",
               "status": "Done",
+              "prioridad": "Baja",
               "subtasks": [
                 {
                   "title": "Find direct and indirect competitors",
@@ -265,9 +281,10 @@
               ]
             },
             {
-              "title": "Research the market",
+              "titulo": "Research the market",
               "description": "We need to get a solid overview of the market to ensure we have up-to-date estimates of market size and demand.",
               "status": "Done",
+              "prioridad": "Baja",
               "subtasks": [
                 {
                   "title": "Write up research analysis",

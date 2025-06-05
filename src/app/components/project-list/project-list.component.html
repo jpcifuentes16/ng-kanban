@@ -1,0 +1,32 @@
+<div class="board-container board mt-24 h-screen overflow-auto bg-grey-light px-1.6 py-2.4 sm:mt-32 sm:px-2.4 lg:mt-36">
+  <ng-container *ngIf="activeBoard?.columns?.length; else emptyProjectList">
+    <div class="flex flex-col gap-8">
+      <ng-container *ngFor="let column of activeBoard?.columns">
+        <h3 class="mb-2.4 text-sm font-bold uppercase leading-sm tracking-sm text-grey-medium">
+          {{ column?.name }} ({{ column?.tasks?.length || 0 }})
+        </h3>
+        <div class="flex flex-col gap-8 mb-8">
+          <app-task-card
+            *ngFor="let task of column.tasks"
+            (click)="viewTask(task)"
+            (keyup.enter)="viewTask(task)"
+            [actividad]="task"
+          ></app-task-card>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #emptyProjectList>
+  <div class="flex h-full flex-col items-center justify-center">
+    <h3 class="mb-3.2 text-center text-lg font-bold leading-lg text-grey-medium">
+      This board is empty. Create a new <br class="sm:hidden" />column
+      <br class="hidden sm:block lg:hidden" />
+      to get started.
+    </h3>
+    <button (click)="addColumn()" class="btn-primary btn-lg w-[17.4rem]">
+      + Add New Column
+    </button>
+  </div>
+</ng-template>

@@ -23,14 +23,17 @@
       [activeBoard]="activeBoard()"
       [boards]="boards()"
       [darkMode]="darkMode"
+      [viewMode]="viewMode"
       (boardSelect)="selectBoard($event)"
       (boardAdd)="addBoard()"
       (boardEdit)="editBoard()"
       (boardDelete)="deleteBoard()"
       (taskAdd)="addTask()"
+      (viewChange)="toggleView()"
     ></app-navbar>
 
     <app-project-board
+      *ngIf="viewMode === 'kanban'"
       [darkMode]="darkMode"
       [activeBoard]="activeBoard()"
       (columnAdd)="editBoard()"
@@ -39,5 +42,9 @@
       (taskDeleteModal)="deleteTask($event)"
       (taskUpdateModal)="editTask($event)"
     ></app-project-board>
+    <app-calendar-view
+      *ngIf="viewMode === 'calendar'"
+      [activeBoard]="activeBoard()"
+    ></app-calendar-view>
   </main>
 </div>

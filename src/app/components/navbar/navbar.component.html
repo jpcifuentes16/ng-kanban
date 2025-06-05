@@ -102,6 +102,12 @@
       Edit Board
     </button>
     <button
+      (click)="toggleView()"
+      class="text-left text-ms font-medium leading-ms text-grey-medium"
+    >
+      {{ viewMode === "kanban" ? "Calendar View" : "Kanban View" }}
+    </button>
+    <button
       (click)="deleteBoard()"
       class="text-left text-ms font-medium leading-ms text-red"
     >

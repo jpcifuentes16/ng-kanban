@@ -1,0 +1,11 @@
+<div class="space-y-6 p-6">
+  <h2 class="text-xl font-bold">Home</h2>
+  <p class="text-md">Total boards: {{ boardCount }}</p>
+  <div *ngFor="let stat of boardStats()" class="rounded-lg border p-4">
+    <h3 class="mb-2 font-semibold">{{ stat.name }}</h3>
+    <p>Total tasks: {{ stat.totalTasks }}</p>
+    <ul class="ml-4 list-disc">
+      <li *ngFor="let col of stat.columns">{{ col.name }}: {{ col.count }}</li>
+    </ul>
+  </div>
+</div>

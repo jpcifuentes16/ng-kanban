@@ -7,6 +7,7 @@ import { DeleteModalComponent } from './components/modals/delete-modal/delete-mo
 import { TaskModalComponent } from './components/modals/task-modal/task-modal.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectBoardComponent } from './components/project-board/project-board.component';
+import { HomeComponent } from './components/home/home.component';
 import { SidebarToggleComponent } from './components/sidebar-toggle/sidebar-toggle.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ThemeTogglerComponent } from './components/sidebar/theme-toggler/theme-toggler.component';
@@ -24,6 +25,7 @@ import { BoardDataService } from './services/board-data/board-data.service';
     ThemeTogglerComponent,
     NavbarComponent,
     ProjectBoardComponent,
+    HomeComponent,
     SidebarToggleComponent,
     BoardModalComponent,
     DeleteModalComponent,
@@ -36,6 +38,8 @@ export class AppComponent implements OnInit {
   darkMode = false;
 
   isSidebarOpen = true;
+
+  viewHome = false;
 
   boards = this.boardDataService.boards;
 
@@ -53,11 +57,16 @@ export class AppComponent implements OnInit {
   }
 
   selectBoard(boardIdx: number) {
+    this.viewHome = false;
     this.boardDataService.selectBoard(boardIdx);
   }
 
   toggleDarkMode(enableDarkMode: boolean) {
     this.darkMode = enableDarkMode;
+  }
+
+  showHome(): void {
+    this.viewHome = true;
   }
 
   openSideBar(): void {

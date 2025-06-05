@@ -6,7 +6,9 @@
     [boards]="boards()"
     [activeBoard]="activeBoard()"
     [opened]="isSidebarOpen"
+    [homeActive]="viewHome"
     (selected)="selectBoard($event)"
+    (homeSelect)="showHome()"
     (enableDarkMode)="toggleDarkMode($event)"
     (closeSidebar)="closeSidebar()"
     (add)="addBoard()"
@@ -18,26 +20,32 @@
     class="main flex-1 duration-700"
     [ngClass]="{ 'sm:ml-[26rem] lg:ml-[30rem]': isSidebarOpen }"
   >
-    <app-navbar
-      [opened]="isSidebarOpen"
-      [activeBoard]="activeBoard()"
-      [boards]="boards()"
-      [darkMode]="darkMode"
-      (boardSelect)="selectBoard($event)"
-      (boardAdd)="addBoard()"
-      (boardEdit)="editBoard()"
-      (boardDelete)="deleteBoard()"
-      (taskAdd)="addTask()"
-    ></app-navbar>
+    <ng-container *ngIf="!viewHome; else dashboard">
+      <app-navbar
+        [opened]="isSidebarOpen"
+        [activeBoard]="activeBoard()"
+        [boards]="boards()"
+        [darkMode]="darkMode"
+        (boardSelect)="selectBoard($event)"
+        (boardAdd)="addBoard()"
+        (boardEdit)="editBoard()"
+        (boardDelete)="deleteBoard()"
+        (taskAdd)="addTask()"
+      ></app-navbar>
 
-    <app-project-board
-      [darkMode]="darkMode"
-      [activeBoard]="activeBoard()"
-      (columnAdd)="editBoard()"
-      (boardEdit)="updateBoardAfterTaskReorder($event)"
-      (taskUpdate)="updateTask($event)"
-      (taskDeleteModal)="deleteTask($event)"
-      (taskUpdateModal)="editTask($event)"
-    ></app-project-board>
+      <app-project-board
+        [darkMode]="darkMode"
+        [activeBoard]="activeBoard()"
+        (columnAdd)="editBoard()"
+        (boardEdit)="updateBoardAfterTaskReorder($event)"
+        (taskUpdate)="updateTask($event)"
+        (taskDeleteModal)="deleteTask($event)"
+        (taskUpdateModal)="editTask($event)"
+      ></app-project-board>
+    </ng-container>
+
+    <ng-template #dashboard>
+      <app-home [boards]="boards()"></app-home>
+    </ng-template>
   </main>
 </div>

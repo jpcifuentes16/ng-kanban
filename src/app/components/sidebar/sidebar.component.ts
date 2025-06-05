@@ -14,10 +14,12 @@ export class SidebarComponent {
   @Input() boards!: Board[];
   @Input() activeBoard!: Board | null;
   @Input() opened!: boolean;
+  @Input() homeActive = false;
   @Output() closeSidebar = new EventEmitter<void>();
   @Output() enableDarkMode = new EventEmitter<boolean>();
   @Output() add = new EventEmitter<void>();
   @Output() selected = new EventEmitter<number>();
+  @Output() homeSelect = new EventEmitter<void>();
 
   collapseSidebar(): void {
     this.closeSidebar.emit();
@@ -29,5 +31,9 @@ export class SidebarComponent {
 
   selectBoard(boardIdx: number): void {
     this.selected.emit(boardIdx);
+  }
+
+  selectHome(): void {
+    this.homeSelect.emit();
   }
 }

@@ -21,6 +21,22 @@
     class="mb-auto flex flex-col sm:w-96 lg:w-[27.6rem]"
     [ngClass]="{ hidden: !opened }"
   >
+    <button
+      (click)="selectHome()"
+      [ngClass]="
+        homeActive
+          ? 'flex h-4.8 items-center rounded-r-full bg-purple text-white sm:pl-2.4 lg:pl-3.2'
+          : 'marker flex h-4.8 items-center rounded-r-full text-grey-medium hover:bg-purple-low hover:text-purple dark:hover:bg-white sm:pl-2.4 lg:pl-3.2'
+      "
+    >
+      <img
+        src="assets/images/icon-board.svg"
+        alt="home"
+        class="mr-1.2 h-1.6 w-1.6 lg:mr-1.6"
+      />
+      <span class="text-md font-bold leading-md">Home</span>
+    </button>
+
     <h2
       class="mb-8 text-sm font-bold uppercase leading-sm tracking-sm text-grey-medium sm:pl-2.4 lg:pl-3.2"
     >

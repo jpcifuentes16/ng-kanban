@@ -21,14 +21,49 @@ export class CalendarViewComponent implements OnInit {
   weeks: Day[][] = [];
   daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+  currentMonth = new Date();
+
   ngOnInit(): void {
     this.generateCalendar();
   }
 
+  prevMonth() {
+    this.currentMonth = new Date(
+      this.currentMonth.getFullYear(),
+      this.currentMonth.getMonth() - 1,
+      1,
+    );
+    this.generateCalendar();
+  }
+
+  nextMonth() {
+    this.currentMonth = new Date(
+      this.currentMonth.getFullYear(),
+      this.currentMonth.getMonth() + 1,
+      1,
+    );
+    this.generateCalendar();
+  }
+
+  get monthLabel(): string {
+    return this.currentMonth.toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
+  }
+
   private generateCalendar() {
-    const today = new Date();
-    const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
-    const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    this.weeks = [];
+    const firstDay = new Date(
+      this.currentMonth.getFullYear(),
+      this.currentMonth.getMonth(),
+      1,
+    );
+    const lastDay = new Date(
+      this.currentMonth.getFullYear(),
+      this.currentMonth.getMonth() + 1,
+      0,
+    );
 
     let current = new Date(firstDay);
     current.setDate(current.getDate() - current.getDay());
@@ -55,7 +90,12 @@ export class CalendarViewComponent implements OnInit {
     const tasks: Task[] = [];
     this.activeBoard.columns.forEach((column) => {
       column.tasks.forEach((task) => {
-        if (task.dueDate === dateStr) {
+        const start = task.startDate ?? task.endDate ?? task.dueDate;
+        const end = task.endDate ?? task.dueDate ?? task.startDate;
+        if (!start || !end) {
+          return;
+        }
+        if (start <= dateStr && dateStr <= end) {
           tasks.push(task);
         }
       });

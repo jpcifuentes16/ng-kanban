@@ -76,12 +76,30 @@
       }"
       class="mb-0.8 text-sm font-bold leading-sm"
     >
-      Due Date
+      Start Date
     </h5>
     <input
-      id="dueDate"
+      id="startDate"
       type="date"
-      formControlName="dueDate"
+      formControlName="startDate"
+      [ngClass]="{ 'text-white': data.darkMode, 'text-black': !data.darkMode }"
+      class="main-control h-16"
+    />
+  </div>
+  <div class="flex flex-col">
+    <h5
+      [ngClass]="{
+        'text-white': data.darkMode,
+        'text-grey-medium': !data.darkMode
+      }"
+      class="mb-0.8 text-sm font-bold leading-sm"
+    >
+      End Date
+    </h5>
+    <input
+      id="endDate"
+      type="date"
+      formControlName="endDate"
       [ngClass]="{ 'text-white': data.darkMode, 'text-black': !data.darkMode }"
       class="main-control h-16"
     />

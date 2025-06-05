@@ -54,7 +54,10 @@ export class TaskModalComponent implements OnInit {
           validators: [Validators.required],
         },
       ),
-      dueDate: this.fb.control(this.data.task?.dueDate || ''),
+      startDate: this.fb.control(this.data.task?.startDate || ''),
+      endDate: this.fb.control(
+        this.data.task?.endDate || this.data.task?.dueDate || ''
+      ),
       subtasks: this.fb.array([
         this.fb.nonNullable.group({
           isCompleted: false,

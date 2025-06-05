@@ -1,4 +1,9 @@
 <div class="calendar-container p-4">
+  <div class="mb-2 flex items-center justify-between">
+    <button (click)="prevMonth()" class="btn btn-xs">&#60;</button>
+    <span class="font-bold">{{ monthLabel }}</span>
+    <button (click)="nextMonth()" class="btn btn-xs">&#62;</button>
+  </div>
   <div class="mb-2 grid grid-cols-7 font-bold">
     <div *ngFor="let day of daysOfWeek" class="text-center">{{ day }}</div>
   </div>
@@ -9,7 +14,12 @@
         class="h-24 overflow-auto border p-1 align-top text-xs"
       >
         <div class="font-semibold">{{ day.date.getDate() }}</div>
-        <div *ngFor="let task of day.tasks">{{ task.titulo }}</div>
+        <div *ngFor="let task of day.tasks">
+          {{ task.titulo }}
+          <span class="block text-[10px]">
+            {{ task.startDate || '?' }} - {{ task.endDate || '?' }}
+          </span>
+        </div>
       </div>
     </div>
   </div>

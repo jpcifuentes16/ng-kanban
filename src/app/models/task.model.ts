@@ -17,5 +17,12 @@ export interface Task {
   status: string;
   subtasks: SubTask[];
   estado: EstadoActividad;
+  /** Fecha de inicio de la tarea */
+  startDate?: string;
+
+  /** Fecha de finalización estimada */
+  endDate?: string;
+
+  /** @deprecated Reemplazado por endDate */
   dueDate?: string;
 }

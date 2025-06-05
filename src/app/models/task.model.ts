@@ -17,4 +17,5 @@ export interface Task {
   status: string;
   subtasks: SubTask[];
   estado: EstadoActividad;
+  dueDate?: string;
 }

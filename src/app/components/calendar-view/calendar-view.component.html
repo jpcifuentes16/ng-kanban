@@ -1,0 +1,16 @@
+<div class="calendar-container p-4">
+  <div class="mb-2 grid grid-cols-7 font-bold">
+    <div *ngFor="let day of daysOfWeek" class="text-center">{{ day }}</div>
+  </div>
+  <div class="calendar-weeks flex flex-col gap-2">
+    <div *ngFor="let week of weeks" class="grid grid-cols-7 gap-px">
+      <div
+        *ngFor="let day of week"
+        class="h-24 overflow-auto border p-1 align-top text-xs"
+      >
+        <div class="font-semibold">{{ day.date.getDate() }}</div>
+        <div *ngFor="let task of day.tasks">{{ task.titulo }}</div>
+      </div>
+    </div>
+  </div>
+</div>

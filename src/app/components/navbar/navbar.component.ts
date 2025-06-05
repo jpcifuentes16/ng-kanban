@@ -15,11 +15,13 @@ export class NavbarComponent {
   @Input() activeBoard!: Board | null;
   @Input() boards!: Board[];
   @Input() darkMode!: boolean;
+  @Input() viewMode: 'kanban' | 'calendar' = 'kanban';
   @Output() boardSelect = new EventEmitter<number>();
   @Output() boardAdd = new EventEmitter<void>();
   @Output() boardEdit = new EventEmitter<void>();
   @Output() boardDelete = new EventEmitter<void>();
   @Output() taskAdd = new EventEmitter<void>();
+  @Output() viewChange = new EventEmitter<void>();
 
   sidebarShown = false;
 
@@ -41,6 +43,10 @@ export class NavbarComponent {
 
   addTask(): void {
     this.taskAdd.emit();
+  }
+
+  toggleView(): void {
+    this.viewChange.emit();
   }
 
   open(): void {

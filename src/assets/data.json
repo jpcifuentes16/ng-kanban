@@ -11,6 +11,7 @@
               "description": "",
               "status": "Todo",
               "prioridad": "Alta",
+              "dueDate": "2024-06-10",
               "subtasks": [
                 {
                   "title": "Sign up page",
@@ -31,6 +32,7 @@
               "description": "",
               "status": "Todo",
               "prioridad": "Media",
+              "dueDate": "2024-06-12",
               "subtasks": [
                 {
                   "title": "Search page",
@@ -43,6 +45,7 @@
               "description": "",
               "status": "Todo",
               "prioridad": "Media",
+              "dueDate": "2024-06-15",
               "subtasks": [
                 {
                   "title": "Account page",
@@ -59,6 +62,7 @@
               "description": "Once we feel version one is ready, we need to rigorously test it both internally and externally to identify any major gaps.",
               "status": "Todo",
               "prioridad": "Baja",
+              "dueDate": "2024-06-20",
               "subtasks": [
                 {
                   "title": "Internal testing",
@@ -80,6 +84,7 @@
               "description": "",
               "status": "Doing",
               "prioridad": "Alta",
+              "dueDate": "2024-06-10",
               "subtasks": [
                 {
                   "title": "Settings - Account page",
@@ -100,6 +105,7 @@
               "description": "",
               "status": "Doing",
               "prioridad": "Alta",
+              "dueDate": "2024-06-12",
               "subtasks": [
                 {
                   "title": "Upgrade plan",
@@ -120,6 +126,7 @@
               "description": "",
               "status": "Doing",
               "prioridad": "Alta",
+              "dueDate": "2024-06-15",
               "subtasks": [
                 {
                   "title": "Sign up page",
@@ -140,6 +147,7 @@
               "description": "",
               "status": "Doing",
               "prioridad": "Media",
+              "dueDate": "2024-06-18",
               "subtasks": [
                 {
                   "title": "Add search endpoint",
@@ -156,6 +164,7 @@
               "description": "",
               "status": "Doing",
               "prioridad": "Media",
+              "dueDate": "2024-06-21",
               "subtasks": [
                 {
                   "title": "Define user model",

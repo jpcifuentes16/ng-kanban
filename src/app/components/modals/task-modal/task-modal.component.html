@@ -68,6 +68,24 @@
     >
     </textarea>
   </div>
+  <div class="flex flex-col">
+    <h5
+      [ngClass]="{
+        'text-white': data.darkMode,
+        'text-grey-medium': !data.darkMode
+      }"
+      class="mb-0.8 text-sm font-bold leading-sm"
+    >
+      Due Date
+    </h5>
+    <input
+      id="dueDate"
+      type="date"
+      formControlName="dueDate"
+      [ngClass]="{ 'text-white': data.darkMode, 'text-black': !data.darkMode }"
+      class="main-control h-16"
+    />
+  </div>
   <div>
     <h5
       [ngClass]="{
@@ -148,7 +166,7 @@
       Current Status
     </h5>
     <select
-      class="bg-gray-50 border-gray-300 text-gray-900 block w-full rounded-lg border px-2 py-4 text-sm"
+      class="block w-full rounded-lg border border-gray-300 bg-gray-50 px-2 py-4 text-sm text-gray-900"
       [ngClass]="{
         'bg-grey-vdark text-white': data.darkMode,
         'bg-white': !data.darkMode

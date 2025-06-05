@@ -7,6 +7,7 @@ import { DeleteModalComponent } from './components/modals/delete-modal/delete-mo
 import { TaskModalComponent } from './components/modals/task-modal/task-modal.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectBoardComponent } from './components/project-board/project-board.component';
+import { CalendarViewComponent } from './components/calendar-view/calendar-view.component';
 import { SidebarToggleComponent } from './components/sidebar-toggle/sidebar-toggle.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ThemeTogglerComponent } from './components/sidebar/theme-toggler/theme-toggler.component';
@@ -24,6 +25,7 @@ import { BoardDataService } from './services/board-data/board-data.service';
     ThemeTogglerComponent,
     NavbarComponent,
     ProjectBoardComponent,
+    CalendarViewComponent,
     SidebarToggleComponent,
     BoardModalComponent,
     DeleteModalComponent,
@@ -34,6 +36,8 @@ import { BoardDataService } from './services/board-data/board-data.service';
 })
 export class AppComponent implements OnInit {
   darkMode = false;
+
+  viewMode: 'kanban' | 'calendar' = 'kanban';
 
   isSidebarOpen = true;
 
@@ -66,6 +70,10 @@ export class AppComponent implements OnInit {
 
   closeSidebar() {
     this.isSidebarOpen = false;
+  }
+
+  toggleView() {
+    this.viewMode = this.viewMode === 'kanban' ? 'calendar' : 'kanban';
   }
 
   addBoard(): void {

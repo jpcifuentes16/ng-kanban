@@ -96,6 +96,12 @@
     class="flex w-[19.2rem] flex-col gap-1.6 rounded-xl p-1.6"
   >
     <button
+      (click)="toggleView()"
+      class="text-left text-ms font-medium leading-ms text-grey-medium"
+    >
+      {{ viewMode === 'kanban' ? 'List View' : 'Kanban View' }}
+    </button>
+    <button
       (click)="editBoard()"
       class="text-left text-ms font-medium leading-ms text-grey-medium"
     >
